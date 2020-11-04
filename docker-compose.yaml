@@ -1,0 +1,28 @@
+version: '3.1'
+services:
+  db-sell-easy:
+    image: postgres
+    container_name: db-sell-easy
+    environment:
+      POSTGRES_PASSWORD: sell_easy
+      POSTGRES_USER: sell_easy
+      POSTGRES_DB: sell_easy
+    ports:
+    - 5432:5432
+  sell-easy:
+    container_name: api-finances
+    image: lucascoelhocs/sell-easy
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      PORT: 8080
+      DATABASE_URL: "jdbc:postgresql://db-sell-easy:5432/sell_easy"
+      DATABASE_USERNAME: "sell_easy"
+      DATABASE_PASSWORD: "sell_easy"
+      JAVA_OPTS: "-Dquarkus.http.host=0.0.0.0 -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:8001"
+      REQUEST_LOG_ENABLED: "true"
+    ports:
+      - "8080:8080"
+      - "8001:8001"
+

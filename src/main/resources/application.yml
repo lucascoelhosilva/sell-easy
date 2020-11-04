@@ -1,0 +1,33 @@
+quarkus:
+  application:
+    name: ${APPLICATION_NAME:sell-easy}
+    version: ${APPLICATION_VERSION:1.0}
+    request-interceptor:
+      threshold: ${REQUEST_LOG_THRESHOLD:5000}
+      enabled: ${REQUEST_LOG_ENABLED:false}
+  log:
+    console:
+      enable: true
+      color: true
+      format: "[%t][%p][%d{yyyy-MM-dd HH:mm:ss,SSS}][%X{traceId}][%c]-%s %e %n"
+  datasource:
+    db-kind: "postgresql"
+    jdbc:
+      url: ${DATABASE_URL:jdbc:postgresql://localhost:5432/sell_easy}
+    username: ${DATABASE_USERNAME:sell_easy}
+    password: ${DATABASE_PASSWORD:sell_easy}
+
+  #  hibernate configs
+  hibernate-orm:
+    database:
+      generation: ${HIBERNATE_DATABASE_GENERATION:update}
+    log:
+      sql: ${HIBERNATE_LOG:false}
+  #  metrics configs
+    #  jaeger configs
+  jaeger:
+    enabled: ${JAEGER_ENABLED:false}
+    service-name: ${quarkus.application.name}
+    reporter-log-spans: ${OPENTRACING_LOG_SPANS:false}
+    endpoint: ${JAEGER_ENDPOINT:http://localhost:14268/api/traces}
+    sampler-param: ${JAEGER_SAMPLER:1}
