@@ -187,36 +187,6 @@
                     </systemPropertyVariables>
                 </configuration>
             </plugin>
-
-            <plugin>
-                <groupId>org.jacoco</groupId>
-                <artifactId>jacoco-maven-plugin</artifactId>
-                <version>0.8.3</version>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>prepare-agent</goal>
-                        </goals>
-                    </execution>
-                    <execution>
-                        <id>jacoco-report</id>
-                        <phase>test</phase>
-                        <configuration>
-                            <excludes>
-                                <exclude>**/config/*</exclude>
-                                <exclude>**/dto/*</exclude>
-                                <exclude>**/enums/*</exclude>
-                                <exclude>**/infra/health/*</exclude>
-                                <exclude>**/models/*</exclude>
-                            </excludes>
-                        </configuration>
-                        <goals>
-                            <goal>report</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-
         </plugins>
     </build>
     <profiles>
