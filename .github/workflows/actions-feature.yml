@@ -10,6 +10,8 @@ jobs:
 
   test:
     name: Unit Test
+    runs-on: ubuntu-18.04
+
     steps:
       - name: Maven Package
         run: make test
