@@ -19,12 +19,6 @@ class ExpenseServiceTest extends BaseServiceTest {
     ExpenseService service;
 
     @Test
-    void testFindAll() {
-        Collection<Expense> expenses = service.findAll(OFFSET, LIMIT);
-        Assertions.assertTrue(expenses.isEmpty());
-    }
-
-    @Test
     void testCreate() {
         Expense expense = service.create(aExpense());
 

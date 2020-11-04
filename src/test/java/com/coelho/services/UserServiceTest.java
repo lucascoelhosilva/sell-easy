@@ -17,12 +17,6 @@ class UserServiceTest extends BaseServiceTest {
     UserService service;
 
     @Test
-    void testFindAll() {
-        Collection<User> users = service.findAll(aCustomer().getId(), OFFSET, LIMIT);
-        Assertions.assertTrue(users.isEmpty());
-    }
-
-    @Test
     void testCreate() {
         User user = service.create(aUser());
 

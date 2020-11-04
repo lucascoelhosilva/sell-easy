@@ -17,12 +17,6 @@ class AccountServiceTest extends BaseServiceTest {
     AccountService service;
 
     @Test
-    void testFindAll() {
-        Collection<Account> accounts = service.findAll(OFFSET, LIMIT);
-        Assertions.assertFalse(accounts.isEmpty());
-    }
-
-    @Test
     void testCreate() {
         Account account = service.create(Account.builder().name("test").customer(aCustomer()).build());
 

@@ -19,12 +19,6 @@ class IncomeServiceTest extends BaseServiceTest {
     IncomeService service;
 
     @Test
-    void testFindAll() {
-        Collection<Income> incomes = service.findAll(OFFSET, LIMIT);
-        Assertions.assertTrue(incomes.isEmpty());
-    }
-
-    @Test
     void testCreate() {
         Income income = service.create(aIncome());
 

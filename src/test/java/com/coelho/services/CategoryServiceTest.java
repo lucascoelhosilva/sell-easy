@@ -21,12 +21,6 @@ class CategoryServiceTest extends BaseServiceTest {
     CategoryService service;
 
     @Test
-    void testFindAll() {
-        Collection<Category> categories = service.findAll(OFFSET, LIMIT);
-        Assertions.assertFalse(categories.isEmpty());
-    }
-
-    @Test
     void testCreate() {
         Category category = service.create(Category.builder().name("test").customer(aCustomer()).build());
 

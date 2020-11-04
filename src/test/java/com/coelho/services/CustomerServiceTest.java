@@ -21,12 +21,6 @@ class CustomerServiceTest {
     CustomerService service;
 
     @Test
-    void testFindAll() {
-        Collection<Customer> customers = service.findAll(OFFSET, LIMIT);
-        Assertions.assertFalse(customers.isEmpty());
-    }
-
-    @Test
     void testCreate() {
         Customer customer = service.create(Customer.builder().name("test").build());
 
