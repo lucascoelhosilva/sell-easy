@@ -1,0 +1,15 @@
+name: Feature Branch
+
+on:
+  push:
+    branches-ignore:
+      - 'master'
+      - 'release*'
+
+jobs:
+
+  test:
+    name: Unit Test
+    steps:
+      - name: Maven Package
+        run: make test
