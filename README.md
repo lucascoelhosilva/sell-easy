@@ -1,3 +1,5 @@
+[![Github Actions Status for sell-easy](https://github.com/lucascoelhosilva/sell-easy/workflows/Build/badge.svg)](https://github.com/lucascoelhosilva/sell-easy/actions)
+
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=lucascoelhosilva_sell-easy&metric=alert_status)](https://sonarcloud.io/dashboard?id=lucascoelhosilva_sell-easy)
 
 # sell-easy project
